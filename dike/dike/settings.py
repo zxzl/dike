@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'webdike',
+    'storages',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -147,3 +148,16 @@ LOGIN_URL = "/accounts/login/"
 CSRF_USE_SESSIONS = False
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+# S3 setting
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+AWS_AUTO_CREATE_BUCKET = True
+AWS_S3_HOST = "s3.ap-northeast-2.amazonaws.com"
+AWS_REGION = "ap-northeast-2"
+AWS_S3_REGION_NAME = "ap-northeast-2"
+AWS_QUERYSTRING_AUTH=False
+AWS_S3_SIGNATURE_VERSION='s3v4'

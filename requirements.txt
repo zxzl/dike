@@ -1,6 +1,8 @@
 Django==1.11.7
-pkg-resources==0.0.0
 pytz==2017.3
 psycopg2==2.7.3
 django-dotenv==1.4.1
 django-allauth
+zappa
+django-storages
+pip==9.0.3
